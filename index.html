@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AUXEY MIDCO LIMITED | Corporate Portal</title>
+    
+    <!-- Modern Tech Font: Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'monospace'],
+                    },
+                    colors: {
+                        deepblue: '#0B132B',
+                        slate: {
+                            850: '#141E33',
+                            900: '#0F172A',
+                        },
+                        vibrant: '#2563EB',
+                        vibrantLight: '#3B82F6'
+                    },
+                    boxShadow: {
+                        'glow': '0 0 40px -10px rgba(37, 99, 235, 0.4)',
+                        'card': '0 10px 30px -5px rgba(0, 0, 0, 0.1)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: #f8fafc;
+            color: #334155;
+            overflow-x: hidden;
+        }
+
+        /* Abstract Glow Effects */
+        .bg-glow {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(37,99,235,0.15) 0%, rgba(15,23,42,0) 70%);
+            top: -200px;
+            right: -200px;
+            border-radius: 50%;
+            z-index: 0;
+            pointer-events: none;
+        }
+        
+        .bg-glow-2 {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(56,189,248,0.1) 0%, rgba(15,23,42,0) 70%);
+            bottom: -100px;
+            left: -200px;
+            border-radius: 50%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* Reveal Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .delay-100 { transition-delay: 100ms; }
+        .delay-200 { transition-delay: 200ms; }
+        .delay-300 { transition-delay: 300ms; }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0f172a; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #475569; }
+    </style>
+</head>
+<body class="antialiased selection:bg-vibrantLight selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-deepblue/90 backdrop-blur-lg border-b border-white/10 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <div class="w-8 h-8 rounded bg-gradient-to-br from-vibrant to-blue-400 mr-3 flex items-center justify-center shadow-glow">
+                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <span class="font-bold text-xl tracking-wide text-white">AUXEY MIDCO</span>
+                </div>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#initiatives" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Initiatives</a>
+                    <a href="#registry" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Registry</a>
+                    <a href="#contact" class="px-5 py-2.5 rounded-md bg-vibrant text-white text-sm font-semibold hover:bg-vibrantLight transition-all shadow-glow">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 px-6 overflow-hidden bg-deepblue text-white flex flex-col items-center justify-center min-h-[85vh]">
+        <div class="bg-glow"></div>
+        <div class="bg-glow-2"></div>
+        
+        <div class="max-w-5xl mx-auto text-center relative z-10">
+            <div class="inline-flex items-center px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium mb-8 reveal">
+                <span class="w-2 h-2 rounded-full bg-vibrant mr-2 animate-pulse"></span>
+                Corporate Enterprise Portal
+            </div>
+            <h1 class="reveal delay-100 font-extrabold text-5xl md:text-6xl lg:text-7xl tracking-tight leading-tight mb-6">
+                Engineering the Future of <span class="text-transparent bg-clip-text bg-gradient-to-r from-vibrantLight to-blue-300">Digital Experiences</span>
+            </h1>
+            <p class="reveal delay-200 mt-6 text-xl text-slate-400 max-w-3xl mx-auto font-light leading-relaxed">
+                AUXEY MIDCO LIMITED architects robust software solutions and cutting-edge interactive technologies for the modern enterprise ecosystem.
+            </p>
+            <div class="reveal delay-300 mt-10 flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#initiatives" class="px-8 py-4 rounded-lg bg-vibrant text-white font-semibold hover:bg-blue-500 transition-colors shadow-glow text-center">
+                    Explore Projects
+                </a>
+                <a href="#registry" class="px-8 py-4 rounded-lg bg-slate-800 text-white font-semibold hover:bg-slate-700 border border-slate-700 transition-colors text-center">
+                    View Registry
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Initiatives / Projects Section -->
+    <section id="initiatives" class="py-24 bg-slate-50 px-6 relative z-10">
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-16 reveal">
+                <h2 class="font-bold text-3xl md:text-4xl text-deepblue mb-4">Strategic Initiatives</h2>
+                <div class="w-20 h-1 bg-vibrant rounded-full mb-6"></div>
+                <p class="text-lg text-slate-500 max-w-2xl">Showcasing our active operational portfolios and technological developments currently underway.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Project 1 -->
+                <div class="bg-white rounded-2xl p-8 border border-slate-200 shadow-card hover:-translate-y-2 hover:shadow-xl transition-all duration-300 reveal delay-100 group">
+                    <div class="w-14 h-14 rounded-xl bg-blue-50 text-vibrant flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 002-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-deepblue mb-3">Enterprise Cloud Solutions</h3>
+                    <p class="text-slate-600 mb-6 leading-relaxed">Developing scalable, secure cloud infrastructures designed to handle high-frequency data transactions for modern corporate clients.</p>
+                    <div class="flex items-center text-sm font-semibold text-vibrant uppercase tracking-wide">
+                        Status: Active Development
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="bg-white rounded-2xl p-8 border border-slate-200 shadow-card hover:-translate-y-2 hover:shadow-xl transition-all duration-300 reveal delay-200 group">
+                    <div class="w-14 h-14 rounded-xl bg-blue-50 text-vibrant flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-deepblue mb-3">Next-Gen Mobile Gaming</h3>
+                    <p class="text-slate-600 mb-6 leading-relaxed">Pioneering interactive mobile experiences powered by proprietary physical engines and optimized for high-refresh-rate displays.</p>
+                    <div class="flex items-center text-sm font-semibold text-vibrant uppercase tracking-wide">
+                        Status: Alpha Testing
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Corporate Registry (Dashboard Style) -->
+    <section id="registry" class="py-24 bg-slate-900 px-6 border-y border-white/5 relative overflow-hidden">
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiLz48L3N2Zz4=')] [mask-image:linear-gradient(to_bottom,white,transparent)]"></div>
+        
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="mb-12 reveal text-center md:text-left">
+                <h2 class="font-bold text-3xl md:text-4xl text-white mb-4">Corporate Registry Data</h2>
+                <p class="text-lg text-slate-400 max-w-2xl">Verified entity documentation and operational headquarters information.</p>
+            </div>
+
+            <!-- Dashboard Card -->
+            <div class="bg-slate-850 rounded-2xl border border-slate-700 p-8 md:p-12 shadow-2xl reveal delay-100">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 pb-8 border-b border-slate-700">
+                    <div>
+                        <p class="text-sm font-semibold text-vibrant uppercase tracking-wider mb-1">Entity Name</p>
+                        <h3 class="text-3xl font-bold text-white">AUXEY MIDCO LIMITED</h3>
+                    </div>
+                    <div class="mt-4 md:mt-0 flex items-center px-4 py-2 bg-green-500/10 border border-green-500/20 rounded-full">
+                        <span class="w-2.5 h-2.5 rounded-full bg-green-400 mr-2 animate-pulse"></span>
+                        <span class="text-sm font-medium text-green-400">Verified & Active</span>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                    <!-- DUNS -->
+                    <div class="bg-slate-900/50 p-6 rounded-xl border border-slate-800">
+                        <div class="flex items-center mb-4 text-slate-400">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                            <span class="text-sm font-semibold uppercase tracking-wider">D-U-N-S® Number</span>
+                        </div>
+                        <p class="text-2xl font-mono text-white tracking-widest">223878910</p>
+                    </div>
+
+                    <!-- Address -->
+                    <div class="bg-slate-900/50 p-6 rounded-xl border border-slate-800 md:col-span-2">
+                        <div class="flex items-center mb-4 text-slate-400">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                            <span class="text-sm font-semibold uppercase tracking-wider">Registered Address</span>
+                        </div>
+                        <p class="text-lg text-white leading-relaxed font-mono">
+                            Ryder Court 14 Ryder Street<br>
+                            LONDON, SW1Y 6QB<br>
+                            United Kingdom
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Support / Contact Section -->
+    <section id="contact" class="py-24 bg-white px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+                
+                <!-- Left: Form -->
+                <div class="reveal">
+                    <h2 class="font-bold text-3xl md:text-4xl text-deepblue mb-4">Get in Touch</h2>
+                    <p class="text-slate-600 mb-8">For business inquiries, support requests, or partnership opportunities, please complete the secure form below.</p>
+                    
+                    <form id="contactForm" class="space-y-5">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-2">Full Name</label>
+                                <input type="text" required class="w-full px-4 py-3 rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-vibrant focus:border-transparent transition-all">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-2">Email Address</label>
+                                <input type="email" required class="w-full px-4 py-3 rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-vibrant focus:border-transparent transition-all">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">Subject</label>
+                            <input type="text" required class="w-full px-4 py-3 rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-vibrant focus:border-transparent transition-all">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">Message</label>
+                            <textarea rows="4" required class="w-full px-4 py-3 rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-vibrant focus:border-transparent transition-all resize-none"></textarea>
+                        </div>
+                        <button type="submit" class="w-full sm:w-auto px-8 py-3.5 bg-deepblue text-white font-semibold rounded-lg hover:bg-slate-800 focus:ring-4 focus:ring-slate-200 transition-all shadow-md">
+                            Transmit Message
+                        </button>
+                    </form>
+
+                    <!-- Success State -->
+                    <div id="formSuccess" class="hidden mt-6 p-4 rounded-lg bg-green-50 border border-green-200 text-green-800 flex items-center">
+                        <svg class="w-6 h-6 mr-3 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <span class="font-medium">Transmission successful. Our team will review your inquiry.</span>
+                    </div>
+                </div>
+
+                <!-- Right: Contact Info -->
+                <div class="reveal delay-200 bg-slate-50 p-10 rounded-2xl border border-slate-200 h-full flex flex-col justify-center">
+                    <h3 class="font-bold text-2xl text-deepblue mb-8">Direct Channels</h3>
+                    
+                    <div class="space-y-8">
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 rounded-full bg-blue-100 text-vibrant flex items-center justify-center shrink-0 mr-5">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                            </div>
+                            <div>
+                                <p class="text-sm font-semibold text-slate-500 uppercase mb-1">Corporate Email</p>
+                                <a href="mailto:info@auxeymidco.site" class="text-lg font-semibold text-deepblue hover:text-vibrant transition-colors">info@auxeymidco.site</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 rounded-full bg-blue-100 text-vibrant flex items-center justify-center shrink-0 mr-5">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                            </div>
+                            <div>
+                                <p class="text-sm font-semibold text-slate-500 uppercase mb-1">Headquarters</p>
+                                <p class="text-lg font-medium text-deepblue leading-relaxed">
+                                    Ryder Court 14 Ryder Street<br>
+                                    LONDON, SW1Y 6QB<br>
+                                    United Kingdom
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-deepblue pt-16 pb-8 px-6 border-t border-slate-800 text-slate-400">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-6 md:mb-0 flex items-center">
+                <span class="font-bold text-xl tracking-wide text-white mr-2">AUXEY MIDCO</span>
+                <span class="text-sm">© 2026. All rights reserved.</span>
+            </div>
+            <div class="flex space-x-6 text-sm">
+                <button onclick="toggleModal('privacyModal')" class="hover:text-white transition-colors">Privacy Policy</button>
+                <button onclick="toggleModal('termsModal')" class="hover:text-white transition-colors">Terms of Service</button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODALS (LEGAL) -->
+    
+    <!-- Privacy Modal -->
+    <div id="privacyModal" class="fixed inset-0 z-[60] hidden items-center justify-center p-4 sm:p-6 bg-deepblue/80 backdrop-blur-sm opacity-0 transition-opacity duration-300">
+        <div class="bg-white w-full max-w-3xl rounded-2xl shadow-2xl flex flex-col max-h-[85vh] transform scale-95 transition-transform duration-300">
+            <div class="px-6 py-5 border-b border-slate-100 flex justify-between items-center bg-slate-50 rounded-t-2xl">
+                <h3 class="text-xl font-bold text-deepblue">Privacy Policy</h3>
+                <button onclick="toggleModal('privacyModal')" class="text-slate-400 hover:text-slate-700 bg-white p-2 rounded-full shadow-sm hover:shadow transition-all">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+            <div class="p-6 overflow-y-auto text-slate-600 space-y-4 text-sm font-light">
+                <p class="font-semibold text-slate-800">Effective Date: January 1, 2026</p>
+                <p>AUXEY MIDCO LIMITED ("we," "us," or "our") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website.</p>
+                <h4 class="font-semibold text-slate-800 mt-4">1. Collection of your Information</h4>
+                <p>We may collect information about you in a variety of ways. The information we may collect on the Site includes Personal Data (such as your name, email address, and demographic information) that you voluntarily give to us when choosing to participate in various activities related to the Site.</p>
+                <h4 class="font-semibold text-slate-800 mt-4">2. Use of your Information</h4>
+                <p>Having accurate information about you permits us to provide you with a smooth, efficient, and customized experience. We may use information collected about you via the Site to: fulfill requests, respond to inquiries, and improve our platform.</p>
+                <h4 class="font-semibold text-slate-800 mt-4">3. Data Security</h4>
+                <p>We use administrative, technical, and physical security measures to help protect your personal information. While we have taken reasonable steps to secure the personal information you provide to us, please be aware that despite our efforts, no security measures are perfect or impenetrable.</p>
+                <p class="mt-4">For any privacy-related questions, please contact us at <strong>info@auxeymidco.site</strong>.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Terms Modal -->
+    <div id="termsModal" class="fixed inset-0 z-[60] hidden items-center justify-center p-4 sm:p-6 bg-deepblue/80 backdrop-blur-sm opacity-0 transition-opacity duration-300">
+        <div class="bg-white w-full max-w-3xl rounded-2xl shadow-2xl flex flex-col max-h-[85vh] transform scale-95 transition-transform duration-300">
+            <div class="px-6 py-5 border-b border-slate-100 flex justify-between items-center bg-slate-50 rounded-t-2xl">
+                <h3 class="text-xl font-bold text-deepblue">Terms of Service</h3>
+                <button onclick="toggleModal('termsModal')" class="text-slate-400 hover:text-slate-700 bg-white p-2 rounded-full shadow-sm hover:shadow transition-all">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+            <div class="p-6 overflow-y-auto text-slate-600 space-y-4 text-sm font-light">
+                <p class="font-semibold text-slate-800">Last Updated: January 1, 2026</p>
+                <p>These Terms of Service constitute a legally binding agreement made between you and AUXEY MIDCO LIMITED, concerning your access to and use of our corporate website and services.</p>
+                <h4 class="font-semibold text-slate-800 mt-4">1. Agreement to Terms</h4>
+                <p>By accessing the Site, you agree that you have read, understood, and agree to be bound by all of these Terms of Service. If you do not agree with all of these terms, then you are expressly prohibited from using the Site and you must discontinue use immediately.</p>
+                <h4 class="font-semibold text-slate-800 mt-4">2. Intellectual Property Rights</h4>
+                <p>Unless otherwise indicated, the Site is our proprietary property and all source code, databases, functionality, software, website designs, audio, video, text, photographs, and graphics on the Site are owned or controlled by us.</p>
+                <h4 class="font-semibold text-slate-800 mt-4">3. Governing Law</h4>
+                <p>These Terms shall be governed by and defined following the laws of the United Kingdom. AUXEY MIDCO LIMITED and yourself irrevocably consent that the courts of the United Kingdom shall have exclusive jurisdiction to resolve any dispute which may arise in connection with these terms.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // Smooth Scroll & Reveal Animations
+        document.addEventListener("DOMContentLoaded", () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
+
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        });
+
+        // Form Submit Simulation (No Alerts)
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            this.style.display = 'none';
+            document.getElementById('formSuccess').classList.remove('hidden');
+        });
+
+        // Modal Logic
+        function toggleModal(modalID) {
+            const modal = document.getElementById(modalID);
+            const content = modal.querySelector('.bg-white');
+            
+            if (modal.classList.contains('hidden')) {
+                // Open
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+                // Small delay to allow display block to apply before transition
+                setTimeout(() => {
+                    modal.classList.remove('opacity-0');
+                    content.classList.remove('scale-95');
+                    content.classList.add('scale-100');
+                }, 10);
+                document.body.style.overflow = 'hidden';
+            } else {
+                // Close
+                modal.classList.add('opacity-0');
+                content.classList.remove('scale-100');
+                content.classList.add('scale-95');
+                
+                // Wait for transition to finish
+                setTimeout(() => {
+                    modal.classList.add('hidden');
+                    modal.classList.remove('flex');
+                    document.body.style.overflow = '';
+                }, 300);
+            }
+        }
+
+        // Close modal on outside click
+        document.querySelectorAll('.fixed.inset-0').forEach(modal => {
+            modal.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    toggleModal(this.id);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
